@@ -4,7 +4,7 @@
   "description": "A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv/webm and comments back with the reversed animation.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "keywords": [
     "reddit",
