@@ -1,0 +1,18 @@
+{
+  "name": "reverse-gif-reddit-bot",
+  "version": "1.0.0",
+  "description": "A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv/webm and comments back with the reversed animation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "reddit",
+    "bot",
+    "reverse",
+    "gif"
+  ],
+  "author": "lobabob",
+  "license": "ISC",
+  "dependencies": {}
+}
