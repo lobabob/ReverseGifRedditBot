@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon bot.js",
+    "lint": "jshint *.js",
+
+    "prebuild": "npm run lint",
+    "build": "exit 1",
+
     "test": "mocha --reporter spec test/",
-    "build": "exit 1"
+    "posttest": "npm run lint"
   },
   "keywords": [
     "reddit",
@@ -19,11 +24,11 @@
   "dependencies": {
     "blessed": "^0.1.81",
     "blessed-contrib": "^3.5.5",
-    "nodemon": "^1.9.2"
+    "nodemon": "latest"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "jshint": "^2.9.2",
+    "jshint": "latest",
     "mocha": "^2.5.3",
     "mockery": "^1.7.0",
     "sinon": "^1.17.4"
