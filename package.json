@@ -4,7 +4,7 @@
   "description": "A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv/webm and comments back with the reversed animation.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon bot.js",
+    "start": "nodemon --ignore test/ bot.js",
     "lint": "jshint *.js",
 
     "prebuild": "npm run lint",

@@ -1,5 +1,19 @@
 language: node_js
 node_js:
     - "6.2.0"
+before_script:
+    - mkdir -p ~/.ssh
+    - echo -e $KEY > ~/.ssh/deploy-key
+    - chmod 700 ~ ~/.ssh
+    - chmod 600 ~/.ssh/deploy-key
+    - echo -e "Host $HOST\n\tStrictHostKeyChecking no" >> ~/.ssh/config
+    - echo -e "\tPubkeyAuthentication yes" >> ~/.ssh/config
+    - echo -e "\tRSAAuthentication yes" >> ~/.ssh/config
+    - echo -e "\tIdentityFile ~/.ssh/deploy-key\n" >> ~/.ssh/config
+    - echo -e "\tBatchMode yes\n" >> ~/.ssh/config
+    - chmod 400 ~/.ssh/config
 script:
     - npm test
+after_success:
+    - ssh-agent -s #start the ssh agent
+    - ssh projects@fkdaya.me 'cd ReverseGifRedditBot && git pull'
