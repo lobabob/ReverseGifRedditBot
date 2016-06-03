@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --ignore test/ bot.js",
-    "lint": "jshint *.js",
+    "lint": "jshint .",
 
     "prebuild": "npm run lint",
     "build": "exit 1",
