@@ -4,7 +4,7 @@
   "description": "A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv/webm and comments back with the reversed animation.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ignore test/ bot.js",
+    "start": "nodemon --use_strict --ignore test/ bot.js",
     "lint": "jshint .",
 
     "prebuild": "npm run lint",
@@ -22,8 +22,6 @@
   "author": "lobabob",
   "license": "ISC",
   "dependencies": {
-    "blessed": "^0.1.81",
-    "blessed-contrib": "^3.5.5",
     "nodemon": "latest"
   },
   "devDependencies": {
