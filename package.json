@@ -1,17 +1,20 @@
 {
   "name": "reverse-gif-reddit-bot",
   "version": "1.0.0",
-  "description": "A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv/webm and comments back with the reversed animation.",
+  "description": "A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv and comments back with the reversed animation.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --use_strict --ignore test/ bot.js",
+    "postinstall": "npm prune",
+    "start": "cross-env NODE_PATH=. nodemon --use_strict --ignore test/ index.js",
     "lint": "jshint .",
 
-    "prebuild": "npm run lint",
-    "build": "exit 1",
+    "pretest:single": "npm run lint",
+    "test:single": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec",
+    "posttest:single": "istanbul check-coverage",
 
-    "test": "mocha --reporter spec test/",
-    "posttest": "npm run lint"
+    "pretest": "npm run lint",
+    "test": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec test/",
+    "posttest": "istanbul check-coverage"
   },
   "keywords": [
     "reddit",
@@ -22,10 +25,12 @@
   "author": "lobabob",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^1.0.8",
     "nodemon": "latest"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "istanbul": "^0.4.3",
     "jshint": "latest",
     "mocha": "^2.5.3",
     "mockery": "^1.7.0",
