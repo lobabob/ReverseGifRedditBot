@@ -23,7 +23,7 @@
   ],
   "author": "lobabob",
   "license": "ISC",
-  "ghooks": {
+  "config": {
       "ghooks": {
           "post-merge": "npm install",
           "pre-push": "npm test"
