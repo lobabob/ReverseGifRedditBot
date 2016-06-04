@@ -8,10 +8,10 @@
     "start": "cross-env NODE_PATH=. nodemon --use_strict index.js",
     "lint": "jshint .",
     "test:clean": "rimraf coverage/",
-    "pretest:single": "npm run lint",
+    "pretest:single": "npm run lint && npm run test:clean",
     "test:single": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec",
     "posttest:single": "istanbul check-coverage",
-    "pretest": "npm run lint",
+    "pretest": "npm run lint && npm run test:clean",
     "test": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec test/",
     "posttest": "istanbul check-coverage"
   },
