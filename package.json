@@ -7,11 +7,10 @@
     "postinstall": "npm prune",
     "start": "cross-env NODE_PATH=. nodemon --use_strict index.js",
     "lint": "jshint .",
-
+    "test:clean": "rimraf coverage/",
     "pretest:single": "npm run lint",
     "test:single": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec",
     "posttest:single": "istanbul check-coverage",
-
     "pretest": "npm run lint",
     "test": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec test/",
     "posttest": "istanbul check-coverage"
@@ -24,8 +23,15 @@
   ],
   "author": "lobabob",
   "license": "ISC",
+  "ghooks": {
+      "ghooks": {
+          "post-merge": "npm install",
+          "pre-push": "npm test"
+      }
+  },
   "dependencies": {
     "cross-env": "^1.0.8",
+    "ghooks": "^1.2.1",
     "nodemon": "latest"
   },
   "devDependencies": {
@@ -34,6 +40,7 @@
     "jshint": "latest",
     "mocha": "^2.5.3",
     "mockery": "^1.7.0",
+    "rimraf": "^2.5.2",
     "sinon": "^1.17.4"
   }
 }
