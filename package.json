@@ -33,6 +33,7 @@
     }
   },
   "dependencies": {
+    "bunyan": "^1.8.1",
     "cross-env": "^1.0.8",
     "ghooks": "^1.2.1",
     "limiter": "^1.1.0",
