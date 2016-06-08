@@ -4,6 +4,7 @@
   "description": "A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv and comments back with the reversed animation.",
   "main": "index.js",
   "scripts": {
+    "setup": "node setup/setup.js",
     "postinstall": "npm prune",
     "start": "cross-env NODE_PATH=. nodemon --use_strict index.js",
     "lint": "jshint .",
@@ -24,17 +25,20 @@
   "author": "lobabob",
   "license": "ISC",
   "config": {
-      "ghooks": {
-          "post-merge": "npm install",
-          "post-rewrite": "npm install",
-          "pre-commit": "npm run lint",
-          "pre-push": "npm test"
-      }
+    "ghooks": {
+      "post-merge": "npm install",
+      "post-rewrite": "npm install",
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
   },
   "dependencies": {
     "cross-env": "^1.0.8",
     "ghooks": "^1.2.1",
-    "nodemon": "latest"
+    "limiter": "^1.1.0",
+    "mkdirp": "^0.5.1",
+    "nodemon": "latest",
+    "snoowrap": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
