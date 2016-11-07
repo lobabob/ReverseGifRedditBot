@@ -1,5 +1,6 @@
 # Configuration files
-lib/config
+config.js
+config.json
 
 # Logs
 logs

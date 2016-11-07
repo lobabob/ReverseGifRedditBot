@@ -13,8 +13,10 @@
     "test:single": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec",
     "posttest:single": "istanbul check-coverage",
     "pretest": "npm run lint && npm run test:clean",
-    "test": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec test/",
-    "posttest": "istanbul check-coverage"
+    "test": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec --recursive test/",
+    "posttest": "istanbul check-coverage",
+    "mocha": "cross-env NODE_PATH=. mocha --reporter spec --recursive test/",
+    "mocha:single": "cross-env NODE_PATH=. mocha --reporter spec"
   },
   "keywords": [
     "reddit",
@@ -33,13 +35,15 @@
     }
   },
   "dependencies": {
+    "aws-sdk": "^2.6.15",
     "bunyan": "^1.8.1",
     "cross-env": "^1.0.8",
     "ghooks": "^1.2.1",
     "limiter": "^1.1.0",
     "mkdirp": "^0.5.1",
+    "mongoose": "^4.6.6",
     "nodemon": "latest",
-    "snoowrap": "^1.1.1"
+    "snoowrap": "^1.11.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",

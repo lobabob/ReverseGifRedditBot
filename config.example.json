@@ -1,0 +1,19 @@
+{
+  "api": {
+    "userAgent": "",
+    "clientId": "",
+    "clientSecret": "",
+    "username": "",
+    "password": ""
+  },
+  "format": "Reversify [%v%]",
+  "aws": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "sqs": {
+      "region": "",
+      "queueUrl": "",
+      "apiVersion": "2012-11-05"
+    }
+  }
+}
