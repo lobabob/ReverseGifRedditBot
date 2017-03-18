@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/lobabob/ReverseGifRedditBot.svg?branch=master)](https://travis-ci.org/lobabob/ReverseGifRedditBot)
 # ReverseGifRedditBot
-A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv and comments back with the reversed animation.
+A Reddit bot that reverses gif/gifv links
 
 ## Setup
 In order to run this bot on your own server, perform the following steps

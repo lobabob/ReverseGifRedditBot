@@ -1,18 +1,17 @@
 {
   "name": "reverse-gif-reddit-bot",
   "version": "1.0.0",
-  "description": "A Reddit bot that, when triggered by a keyword(s), reverses a provided gif/gifv and comments back with the reversed animation.",
+  "description": "A Reddit bot that reverses gif/gifv links.",
   "main": "index.js",
   "scripts": {
     "setup": "node setup/setup.js",
     "postinstall": "npm prune",
-    "start": "cross-env NODE_PATH=. nodemon --use_strict index.js",
-    "lint": "jshint .",
-    "test:clean": "rimraf coverage/",
-    "pretest:single": "npm run lint && npm run test:clean",
+    "start": "cross-env NODE_PATH=. node --use_strict index.js",
+    "lint": "eslint --ignore-path .gitignore . --cache",
+    "pretest:single": "npm run lint",
     "test:single": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec",
     "posttest:single": "istanbul check-coverage",
-    "pretest": "npm run lint && npm run test:clean",
+    "pretest": "npm run lint",
     "test": "cross-env NODE_PATH=. istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec --recursive test/",
     "posttest": "istanbul check-coverage",
     "mocha": "cross-env NODE_PATH=. mocha --reporter spec --recursive test/",
@@ -28,30 +27,29 @@
   "license": "ISC",
   "config": {
     "ghooks": {
+      "pre-merge": "npm test",
       "post-merge": "npm install",
       "post-rewrite": "npm install",
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
+      "pre-commit": "npm run lint"
     }
   },
   "dependencies": {
-    "aws-sdk": "^2.6.15",
-    "bunyan": "^1.8.1",
+    "bunyan": "^1.8.5",
     "cross-env": "^1.0.8",
-    "ghooks": "^1.2.1",
+    "ghooks": "^1.3.2",
+    "gifify": "https://github.com/keitharm/gifify",
     "limiter": "^1.1.0",
     "mkdirp": "^0.5.1",
-    "mongoose": "^4.6.6",
-    "nodemon": "latest",
-    "snoowrap": "^1.11.1"
+    "mongoose": "^4.9.0",
+    "request": "^2.81.0",
+    "snoostream": "^1.0.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "istanbul": "^0.4.3",
-    "jshint": "latest",
-    "mocha": "^2.5.3",
-    "mockery": "^1.7.0",
-    "rimraf": "^2.5.2",
-    "sinon": "^1.17.4"
+    "eslint": "^3.18.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mockery": "^2.0.0"
   }
 }
