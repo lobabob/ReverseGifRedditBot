@@ -15,7 +15,15 @@ module.exports = {
   imgur: {
     api: 'https://api.imgur.com/3',
     dailyRate: 1250,
-    clientId: '',
-    clientSecret: ''
+    creds: [    // Supports multiple imgur credentials
+      {
+        clientId: '',
+        clientSecret: ''
+      }, {
+        clientId: '',
+        clientSecret: ''
+      }
+      // ...
+    ]
   }
 };

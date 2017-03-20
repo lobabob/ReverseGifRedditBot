@@ -16,7 +16,7 @@ rules:
   comma-spacing: error
   comma-style: error
   computed-property-spacing: error
-  curly: [error, multi-or-nest]
+  curly: [warn, multi-or-nest]
   dot-notation: error
   dot-location: [error, property]
   eqeqeq: [error, smart]
