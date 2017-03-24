@@ -37,7 +37,7 @@
     "bunyan": "^1.8.5",
     "cross-env": "^1.0.8",
     "ghooks": "^1.3.2",
-    "gifify": "https://github.com/keitharm/gifify",
+    "gifify": "^2.3.0",
     "limiter": "^1.1.0",
     "mkdirp": "^0.5.1",
     "mongoose": "^4.9.0",
