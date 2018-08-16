@@ -8,7 +8,7 @@ module.exports = {
     clientId: '',
     clientSecret: '',
     username: '',
-    password: ''
+    password: '',
   },
   // Regex to use when parsing for trigger keyword and arguments
   format: /Trigger Word (.+)?/gi,
@@ -18,12 +18,12 @@ module.exports = {
     creds: [    // Supports multiple imgur credentials
       {
         clientId: '',
-        clientSecret: ''
+        clientSecret: '',
       }, {
         clientId: '',
-        clientSecret: ''
-      }
+        clientSecret: '',
+      },
       // ...
-    ]
-  }
+    ],
+  },
 };

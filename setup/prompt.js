@@ -3,7 +3,7 @@
 const queue = [];
 process.stdin.setEncoding('utf8');
 
-function Prompt (prompt, cb) {
+function Prompt(prompt, cb) {
   this.prompt = prompt;
   this.cb = cb;
 }
@@ -25,7 +25,7 @@ process.stdin.on('readable', () => {
   }
 });
 
-exports.ask = function ask (prompt, cb) {
+exports.ask = function ask(prompt, cb) {
   queue.push(new Prompt(prompt, cb));
 
   // Only executes if this is the first prompt being added
