@@ -1,13 +1,8 @@
 'use strict';
 
 const queue = [];
+
 process.stdin.setEncoding('utf8');
-
-function Prompt(prompt, cb) {
-  this.prompt = prompt;
-  this.cb = cb;
-}
-
 process.stdin.on('readable', () => {
   let text = process.stdin.read();
 
@@ -25,9 +20,12 @@ process.stdin.on('readable', () => {
   }
 });
 
-exports.ask = function ask(prompt, cb) {
-  queue.push(new Prompt(prompt, cb));
-
-  // Only executes if this is the first prompt being added
+function ask(prompt, cb) {
+  queue.push({ prompt, cb });
+  // Starts the flow of prompts to stdout. The rest are triggered above in the 'readable' event handler.
   if (queue.length === 1) process.stdout.write(queue[0].prompt);
+};
+
+module.exports = {
+  ask,
 };
