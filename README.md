@@ -14,13 +14,7 @@ NODE_ENV=production     # Only necessary if you are not doing any dev work
 npm install
 ```
 
-Follow these steps to setup the configuration for the bot.
-
-```bash
-npm run setup
-```
-
-If you need to modify existing configuration, you can rerun that step or you can directly modify the `repo/config.js` file.
+To set up the configuration for the repo, you will need to make a copy of `config.example.js` and name it `config.js`. Then just fill out all the blank fields.
 
 The bot can be started by running
 

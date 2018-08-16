@@ -4,7 +4,6 @@
   "description": "A Reddit bot that reverses gif/gifv links.",
   "main": "index.js",
   "scripts": {
-    "setup": "node setup/setup.js",
     "start": "node --use_strict index.js",
     "lint": "eslint --ignore-path .gitignore . --cache",
     "pretest:single": "npm run lint",
