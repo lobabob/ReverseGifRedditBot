@@ -11,7 +11,7 @@ module.exports = {
     password: '',
   },
   // Regex to use when parsing for trigger keyword and arguments
-  format: /Trigger Word (.+)?/gi,
+  format: /(?:Trigger Word )([^\s]+) ?([^\s]+)? ?([^\s]+)?/,
   imgur: {
     api: 'https://api.imgur.com/3',
     dailyRate: 1250,
