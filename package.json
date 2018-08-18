@@ -4,7 +4,7 @@
   "description": "A Reddit bot that reverses gif/gifv links.",
   "main": "index.js",
   "scripts": {
-    "start": "node --use_strict index.js",
+    "start": "node index.js",
     "lint": "eslint --ignore-path .gitignore . --cache",
     "pretest:single": "npm run lint",
     "test:single": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec",
@@ -32,11 +32,12 @@
   },
   "dependencies": {
     "bunyan": "^1.8.5",
+    "gfycat-sdk": "^1.4.18",
     "gifify": "^2.3.0",
     "limiter": "^1.1.0",
-    "mkdirp": "^0.5.1",
     "mongoose": "^4.9.0",
     "request": "^2.81.0",
+    "request-promise-native": "^1.0.5",
     "snoostream": "^1.0.1"
   },
   "devDependencies": {
